@@ -47,8 +47,8 @@ console.log("\n")
  */
 
 // array definition
-// const names = ["alireza", "farzaneh", "mohammad", "rojin"]
-// console.log(names, '\n')
+const names = ["alireza", "farzaneh", "mohammad", "rojin"]
+console.log(names, '\n')
 
 // length of array
 // console.log(`There are ${names.length} names in names array\n`)
