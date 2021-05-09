@@ -1,4 +1,5 @@
 const data = require('./data')
+const staff = require('./Institute_data')
 
 console.clear()
 console.log("\n")
@@ -47,8 +48,8 @@ console.log("\n")
  */
 
 // array definition
-const names = ["alireza", "farzaneh", "mohammad", "rojin"]
-console.log(names, '\n')
+// const names = ["alireza", "farzaneh", "mohammad", "rojin"]
+// console.log(names, '\n')
 
 // length of array
 // console.log(`There are ${names.length} names in names array\n`)
@@ -76,15 +77,15 @@ console.log(names, '\n')
 /**
  * @__3 Objects
  */
-const person = {
-  name: "rojin",
-  lastName: "taghadosi",
-  age: 26,
-  education: "bachelor",
-  major: "IT",
-  interests: ["shopping", "traveling", "cats"],
-  country: "Iran unfortunately",
-}
+// const person = {
+//   name: "rojin",
+//   lastName: "taghadosi",
+//   age: 26,
+//   education: "bachelor",
+//   major: "IT",
+//   interests: ["shopping", "traveling", "cats"],
+//   country: "Iran unfortunately",
+// }
 
 // access an object key
 // console.log(`The person's name is "${person.name}"`)
@@ -95,17 +96,17 @@ const person = {
 // console.log(`The person's favourite country is: "${person.favCountry}"`)
 
 // mixing arrays and objects
-const person_2 = {
-  name: "mohammad",
-  lastName: "tabatabaei",
-  age: 27,
-  education: "bachelor",
-  major: "Civil Engineering",
-  interests: ["photography", "restaurants", "gym", "decoration"],
-  country: "Iran unfortunately",
-}
+// const person_2 = {
+//   name: "mohammad",
+//   lastName: "tabatabaei",
+//   age: 27,
+//   education: "bachelor",
+//   major: "Civil Engineering",
+//   interests: ["photography", "restaurants", "gym", "decoration"],
+//   country: "Iran unfortunately",
+// }
 
-const personsList = [person, person_2]
+// const personsList = [person, person_2]
 // console.log(`The name of the second person is: "${person_2.name}"
 // and his interests are: "${person_2.interests}" 
 // `)
@@ -155,24 +156,24 @@ const personsList = [person, person_2]
 //   console.log(person.name)
 // }
 
-for (let index = 0; index < personsList.length; index++) {
-  // extracting required data from the list
-  const name = personsList[index].name  // index 0 name = rojin // index 1 name = mohammad
-  const lastName = personsList[index].lastName
-  const interests = personsList[index].interests
+// for (let index = 0; index < personsList.length; index++) {
+//   // extracting required data from the list
+//   const name = personsList[index].name  // index 0 name = rojin // index 1 name = mohammad
+//   const lastName = personsList[index].lastName
+//   const interests = personsList[index].interests
   
-  let beautifedInterests = ''
+//   let beautifedInterests = ''
 
-  // looping over each person's interests
-  for (let index2 = 0; index2 < interests.length; index2++) {
-    const interest = interests[index2];
+//   // looping over each person's interests
+//   for (let index2 = 0; index2 < interests.length; index2++) {
+//     const interest = interests[index2];
 
-    beautifedInterests = beautifedInterests + `*** ${interest} ***\n`
-  }
+//     beautifedInterests = beautifedInterests + `*** ${interest} ***\n`
+//   }
 
-  console.log(`The interests of "${name} ${lastName}" are:  \n`)
-  console.log(beautifedInterests)
-}
+//   console.log(`The interests of "${name} ${lastName}" are:  \n`)
+//   console.log(beautifedInterests)
+// }
 
 // Double loop
 
@@ -250,9 +251,47 @@ for (let index = 0; index < personsList.length; index++) {
 // Yet again, she did not respond too. Afterwards, you arranged an appointment with "${data[6].name}" at a cafe located in "${data[8].address.street}" in order to consult with him about the problem.
 // I think NOW you find out the my "${data[5].id}th friend in the list" is "${data[5].name}". `)
 
+console.log(`here is the list of my best friends:
+`)
+
+for (let index = 0; index < data.length; index++) {
+  const friends = data[index];
+  console.log(`${data[index].id}. *** ${data[index].name} from ${data[index].address.city}`) ;
+  }
+
+
 
 // console.log('That was awesome, Job well DONE!!!')
 
+// const NamesWithK = []
 
+// for (let index = 0; index <data.length; index++) {
+//   const name =data[index].name
+//   const street =(data[index].address.street).toLowerCase()
 
+//   if (street[0] == 'k'){
+//     NamesWithK.push(name)
 
+//   }
+// }
+// console.log(NamesWithK.length);
+
+//accessing the keys of an object***********
+
+// // extracting the first element of the array
+// const theFirstUser = data[0]
+
+// // extracting the keys of the first object into an array
+// const UserObjectKeys = Object.keys(theFirstUser)
+
+// // looping over the UserObjectKeys to define key variables
+// for (let index = 0; index < UserObjectKeys.length; index++) {
+//   const key = UserObjectKeys[index];
+//   // finding out the key values
+//   console.log(`${key}: ${theFirstUser[key]}`);
+  
+// }
+// console.log(UserObjectKeys);
+// // console.log(Object.keys(theFirstUser)[2]);
+
+// console.log(staff);
