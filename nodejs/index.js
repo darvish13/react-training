@@ -1,5 +1,10 @@
 const data = require('./data')
 const staff = require('./Institute_data')
+const university = require('./university')
+const cocktail = require('./cocktail')
+const weatherData = require('./Weather')
+const weatherReport = require('./functions')
+const randomNumbers = require('./data')
 
 console.clear()
 console.log("\n")
@@ -251,13 +256,13 @@ console.log("\n")
 // Yet again, she did not respond too. Afterwards, you arranged an appointment with "${data[6].name}" at a cafe located in "${data[8].address.street}" in order to consult with him about the problem.
 // I think NOW you find out the my "${data[5].id}th friend in the list" is "${data[5].name}". `)
 
-console.log(`here is the list of my best friends:
-`)
+// console.log(`here is the list of my best friends:
+// `)
 
-for (let index = 0; index < data.length; index++) {
-  const friends = data[index];
-  console.log(`${data[index].id}. *** ${data[index].name} from ${data[index].address.city}`) ;
-  }
+// for (let index = 0; index < data.length; index++) {
+//   const friends = data[index];
+//   console.log(`${friends.id}. *** ${friends.name} from ${friends.address.city}`) ;
+//   }
 
 
 
@@ -295,3 +300,76 @@ for (let index = 0; index < data.length; index++) {
 // // console.log(Object.keys(theFirstUser)[2]);
 
 // console.log(staff);
+// console.log(cocktail);
+console.clear();
+// // console.log(weatherData);
+// const temperature = []
+// const dataSeries = weatherData.dataseries
+// for (let index = 0; index < dataSeries.length; index++) {
+//   const condition = dataSeries[index];
+//   temperature.push(condition.temp2m)
+  
+//   // coverClouds.push(Condition.cloudcover)
+//   console.log(weatherReport(condition));
+  
+//   // console.log(weatherReport(Condition));
+  
+// }
+// console.log(temperature);
+// console.log(Math.min(...temperature), Math.max(...temperature));
+// console.log(coverClouds);
+// console.log(`the minimum is: ${Math.min(...coverClouds)} and the maximum is: ${Math.max(...coverClouds)}`);
+
+// console.log(weatherReport());
+
+// //Number 11 (first practice): to find the second biggest 4-digit number and to find the second smallest 5-digit number
+// const fourDigit= []
+// const fiveDigit= []
+// for (let index = 0; index < randomNumbers.length; index++) {
+//   const numbers = randomNumbers[index];  
+//   if (numbers< 10000 && numbers> 1000) {
+//     fourDigit.push(numbers)    
+//   }
+//   else if (numbers>10000) {
+//     fiveDigit.push(numbers)    
+//   }
+// }
+// console.log(fourDigit);
+// console.log(fiveDigit);
+// const maximumFourDigit = Math.max(...fourDigit)
+// const minimumFiveDigit = Math.min(...fiveDigit)
+// const newListFourDigit = []
+// const newListFiveDigit = []
+
+// for (let index = 0; index < randomNumbers.length; index++) {
+//   const numbers = randomNumbers[index];
+//   if (numbers != maximumFourDigit && numbers <10000) {
+//     newListFourDigit.push(numbers)
+//   }
+//   else if (numbers != minimumFiveDigit && numbers>10000) {
+//     newListFiveDigit.push(numbers)
+//   }
+  
+  
+// }
+// console.log(`the second maximum 4-digit number is: ${Math.max(...newListFourDigit)}
+// and the second minimum 5-digit number is: ${Math.min(...newListFiveDigit)}`);
+
+// // console.log(`the minimum number is: ${Math.min(...randomNumbers)} and the maximum number is: ${Math.max(...randomNumbers)}`);
+// // Math.min(randomNumbers)
+
+//Number 11 (first practice): to find the second biggest 4-digit number and to find the second smallest 5-digit number
+randomNumbers.sort
+console.log(randomNumbers.sort());
+const fiveDigit= []
+const fourDigit= []
+for (let index = 0; index < randomNumbers.length; index++) {
+  const number = randomNumbers[index];
+  if (number<10000 && number>1000) {
+    fourDigit.push(number)    
+  }
+  else if (number>10000){
+    fiveDigit.push(number)    
+  }
+}
+console.log(`the second biggest 4-digit number is: ${fourDigit[fourDigit.length-1]`);

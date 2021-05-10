@@ -4,6 +4,7 @@ const data = [
     "name": "Leanne Graham",
     "username": "Bret",
     "email": "Sincere@april.biz",
+    "gender": "male",
     "address": {
       "street": "Kulas Light",
       "suite": "Apt. 556",
@@ -27,6 +28,7 @@ const data = [
     "name": "Ervin Howell",
     "username": "Antonette",
     "email": "Shanna@melissa.tv",
+    "gender": "male",
     "address": {
       "street": "Victor Plains",
       "suite": "Suite 879",
@@ -50,6 +52,7 @@ const data = [
     "name": "Clementine Bauch",
     "username": "Samantha",
     "email": "Nathan@yesenia.net",
+    "gender": "female",
     "address": {
       "street": "Douglas Extension",
       "suite": "Suite 847",
@@ -73,6 +76,7 @@ const data = [
     "name": "Patricia Lebsack",
     "username": "Karianne",
     "email": "Julianne.OConner@kory.org",
+    "gender": "female",
     "address": {
       "street": "Hoeger Mall",
       "suite": "Apt. 692",
@@ -96,6 +100,7 @@ const data = [
     "name": "Chelsey Dietrich",
     "username": "Kamren",
     "email": "Lucio_Hettinger@annie.ca",
+    "gender": "female",
     "address": {
       "street": "Skiles Walks",
       "suite": "Suite 351",
@@ -119,6 +124,7 @@ const data = [
     "name": "Mrs. Dennis Schulist",
     "username": "Leopoldo_Corkery",
     "email": "Karley_Dach@jasper.info",
+    "gender": "female",
     "address": {
       "street": "Norberto Crossing",
       "suite": "Apt. 950",
@@ -142,6 +148,7 @@ const data = [
     "name": "Kurtis Weissnat",
     "username": "Elwyn.Skiles",
     "email": "Telly.Hoeger@billy.biz",
+    "gender": "male",
     "address": {
       "street": "Rex Trail",
       "suite": "Suite 280",
@@ -165,6 +172,7 @@ const data = [
     "name": "Nicholas Runolfsdottir V",
     "username": "Maxime_Nienow",
     "email": "Sherwood@rosamond.me",
+    "gender": "male",
     "address": {
       "street": "Ellsworth Summit",
       "suite": "Suite 729",
@@ -188,6 +196,7 @@ const data = [
     "name": "Glenna Reichert",
     "username": "Delphine",
     "email": "Chaim_McDermott@dana.io",
+    "gender": "female",
     "address": {
       "street": "Dayna Park",
       "suite": "Suite 449",
@@ -211,6 +220,7 @@ const data = [
     "name": "Clementina DuBuque",
     "username": "Moriah.Stanton",
     "email": "Rey.Padberg@karina.biz",
+    "gender": "female",
     "address": {
       "street": "Kattie Turnpike",
       "suite": "Suite 198",
@@ -230,5 +240,7 @@ const data = [
     }
   }
 ]
+const randomNumbers= [2163, 72134, 8364, 18414, 6842, 63142, 4131, 3148, 3187, 2136, 3176, 34761, 31477, 4631, 1374]
 
 module.exports = data
+module.exports = randomNumbers
