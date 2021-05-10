@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(43, 47, 54);
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75em;
+}
+
+#text {
+  max-width: 50vw;
+  text-align: justify;
+}
