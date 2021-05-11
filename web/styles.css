@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(43, 47, 54);
+  background-color: #2e86df;
   color: white;
   font-family: "Courier New", Courier, monospace;
   font-size: 0.75em;
@@ -7,5 +7,31 @@ body {
 
 #text {
   max-width: 50vw;
+  align-items: center;
   text-align: justify;
+}
+
+#wholePage {
+  background-color:#2e86df;
+  color: white;
+  font-size: 3em;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4em;
+}
+
+#textBox {
+  background-color: whitesmoke;
+  color: gray;
+  align-items: center;
+  text-align: center;
+  margin-right: 5em;
+  margin-left: 5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  min-height: 5em;
 }

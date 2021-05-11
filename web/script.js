@@ -1,5 +1,5 @@
 fetch("https://jsonplaceholder.typicode.com/users")
-  .then((res) => res.json())
+  .then(res) => res.json()
   .then((users) => {
     prettyPrint(users)
 
@@ -12,6 +12,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
     })
 
     printToHtml(rawHtml)
-  })
+})
 
-  //salam 
+//Mohammad's algorith for Jokes of the day
+
+// fetch("https://api.chucknorris.io/jokes/random")
+// .then((res)=>{res.json()})
+// .then((joke)=>{ChuckNorisJoke.innerHTML("joke")})

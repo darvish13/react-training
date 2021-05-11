@@ -1,5 +1,6 @@
-const prettyPrint = (input) => {
+const prettyPrint = input => 
   console.log(input)
+
 
   const selectedParagaph = document.querySelector("#text")
   selectedParagaph.innerHTML = `\n Yesterday, I was thinking about the meaning of friendship,
@@ -20,3 +21,7 @@ const printToHtml = (input) => {
   const divToFill = document.querySelector("#api_data")
   divToFill.innerHTML = input
 }
+
+//Mohammad's algorithm
+// const ChuckNorisJoke = document.querySelector("#text")
+// ChuckNorisJoke.innerHTML = ""
