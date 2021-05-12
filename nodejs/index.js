@@ -1,14 +1,13 @@
-const data = require('./data')
-const staff = require('./Institute_data')
-const university = require('./university')
-const cocktail = require('./cocktail')
-const weatherData = require('./Weather')
-const weatherReport = require('./functions')
-const randomNumbers = require('./data')
-const chalk = require('chalk')
-const axios = require('axios')
-const printName = require('./functions')
-
+const data = require("./data")
+const staff = require("./Institute_data")
+const university = require("./university")
+const cocktail = require("./cocktail")
+const weatherData = require("./Weather")
+const weatherReport = require("./functions")
+const randomNumbers = require("./data")
+const chalk = require("chalk")
+const axios = require("axios")
+const printName = require("./functions")
 
 // console.clear()
 // console.log("\n")
@@ -117,13 +116,12 @@ const printName = require('./functions')
 
 // const personsList = [person, person_2]
 // console.log(`The name of the second person is: "${person_2.name}"
-// and his interests are: "${person_2.interests}" 
+// and his interests are: "${person_2.interests}"
 // `)
 
 // console.log(`The name of the second person is: "${personsList[1].name}"
-// and his interests are: "${personsList[1].interests}" 
+// and his interests are: "${personsList[1].interests}"
 // `)
-
 
 // console.log(
 //   `The name of the second person is: "${personsList[1].name}" and the 3rd interest of the first person is: "${personsList[0].interests[2]}"`
@@ -170,7 +168,7 @@ const printName = require('./functions')
 //   const name = personsList[index].name  // index 0 name = rojin // index 1 name = mohammad
 //   const lastName = personsList[index].lastName
 //   const interests = personsList[index].interests
-  
+
 //   let beautifedInterests = ''
 
 //   // looping over each person's interests
@@ -242,7 +240,6 @@ const printName = require('./functions')
 // getNameFromApi();
 // console.log("rojin taghadosi");
 
-
 /**
  * @__practice
  */
@@ -267,8 +264,6 @@ const printName = require('./functions')
 //   const friends = data[index];
 //   console.log(`${friends.id}. *** ${friends.name} from ${friends.address.city}`) ;
 //   }
-
-
 
 // console.log('That was awesome, Job well DONE!!!')
 
@@ -298,7 +293,7 @@ const printName = require('./functions')
 //   const key = UserObjectKeys[index];
 //   // finding out the key values
 //   console.log(`${key}: ${theFirstUser[key]}`);
-  
+
 // }
 // console.log(UserObjectKeys);
 // // console.log(Object.keys(theFirstUser)[2]);
@@ -312,12 +307,12 @@ const printName = require('./functions')
 // for (let index = 0; index < dataSeries.length; index++) {
 //   const condition = dataSeries[index];
 //   temperature.push(condition.temp2m)
-  
+
 //   // coverClouds.push(Condition.cloudcover)
 //   console.log(weatherReport(condition));
-  
+
 //   // console.log(weatherReport(Condition));
-  
+
 // }
 // console.log(temperature);
 // console.log(Math.min(...temperature), Math.max(...temperature));
@@ -330,12 +325,12 @@ const printName = require('./functions')
 // const fourDigit= []
 // const fiveDigit= []
 // for (let index = 0; index < randomNumbers.length; index++) {
-//   const numbers = randomNumbers[index];  
+//   const numbers = randomNumbers[index];
 //   if (numbers< 10000 && numbers> 1000) {
-//     fourDigit.push(numbers)    
+//     fourDigit.push(numbers)
 //   }
 //   else if (numbers>10000) {
-//     fiveDigit.push(numbers)    
+//     fiveDigit.push(numbers)
 //   }
 // }
 // console.log(fourDigit);
@@ -353,8 +348,7 @@ const printName = require('./functions')
 //   else if (numbers != minimumFiveDigit && numbers>10000) {
 //     newListFiveDigit.push(numbers)
 //   }
-  
-  
+
 // }
 // console.log(`the second maximum 4-digit number is: ${Math.max(...newListFourDigit)}
 // and the second minimum 5-digit number is: ${Math.min(...newListFiveDigit)}`);
@@ -370,10 +364,10 @@ const printName = require('./functions')
 // for (let index = 0; index < randomNumbers.length; index++) {
 //   const number = randomNumbers[index];
 //   if (number<10000 && number>1000) {
-//     fourDigit.push(number)    
+//     fourDigit.push(number)
 //   }
 //   else if (number>10000){
-//     fiveDigit.push(number)    
+//     fiveDigit.push(number)
 //   }
 // }
 // const fave = fourDigit.length-1
@@ -390,6 +384,70 @@ const printName = require('./functions')
 /************************************
  **** Practice 1 => to reverse a number
  ************************************/
-const item1= 13209586
-console.log(item1, String(item1));
-console.log(String(item1).split('').reverse().join(''));
+const item1 = 13209586
+console.log(item1, String(item1))
+console.log(String(item1).split("").reverse().join(""))
+
+const user = {
+  name: "ali",
+  phone: "09106670855",
+  age: 32,
+}
+
+/**************************************
+ ******** Object Destructure
+ *************************************/
+
+// Old way
+const name = user.name
+const phone = user.phone
+const age = user.name
+
+// Destructure
+const { name, phone, age } = user
+
+/**************************************
+ ******** Array Destructure
+ *************************************/
+const persons = ["ali", "rojin", "kim"]
+
+// Old way
+const person1 = persons[0]
+const person2 = persons[1]
+
+// Destructure
+const [person1, person2] = names
+
+/**************************************
+ ******** Props Destructure
+ *************************************/
+const users = [
+  {
+    id: 1,
+    name: "Leanne Graham",
+    email: "Sincere@april.biz",
+    address: {
+      city: "Gwenborough",
+    },
+    phone: "1-770-736-8031 x56442",
+  },
+  {
+    id: 2,
+    name: "Ervin Howell",
+    email: "Shanna@melissa.tv",
+    address: {
+      city: "Wisokyburgh",
+    },
+    phone: "010-692-6593 x09125",
+  },
+]
+
+// Old way
+// users.map(user => console.log(`Name: ${user.name} and City: ${user.address.city}`))
+
+// Destructure
+users.map(({ name, address: { city } }) => {
+
+  // const {name, address: { city }} = user
+  console.log(`Name: ${name} and City: ${city}`)
+})
