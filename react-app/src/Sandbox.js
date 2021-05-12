@@ -15,8 +15,26 @@ const Sandbox = () => {
     <>
       <h1>Sandbox</h1>
       <span>Name: {Joke}</span>
+
+
+      <JokeContainer>
+        <JokeText />
+      </JokeContainer>
+
     </>
   )
 }
 
 export default Sandbox
+
+
+const JokeContainer = (props) => {
+  return (
+    <div>
+      {props.children}
+    </div>
+  )
+}
+
+
+const JokeText = (props) => <h1>Joke: ${props.joke}</h1>
