@@ -399,9 +399,9 @@ const user = {
  *************************************/
 
 // Old way
-const name = user.name
-const phone = user.phone
-const age = user.name
+// const name = user.name
+// const phone = user.phone
+// const age = user.name
 
 // Destructure
 const { name, phone, age } = user
@@ -412,11 +412,11 @@ const { name, phone, age } = user
 const persons = ["ali", "rojin", "kim"]
 
 // Old way
-const person1 = persons[0]
-const person2 = persons[1]
+// const person1 = persons[0]
+// const person2 = persons[1]
 
 // Destructure
-const [person1, person2] = names
+const [person1, person2] = persons
 
 /**************************************
  ******** Props Destructure
