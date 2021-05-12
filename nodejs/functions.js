@@ -26,5 +26,9 @@ function weatherReport(x) {
     }
     return report
 }
+function printName(user) {
+console.log(user.name);
+    
+}
 
-module.exports = weatherReport
+module.exports = printName

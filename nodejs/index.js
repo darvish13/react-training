@@ -5,9 +5,13 @@ const cocktail = require('./cocktail')
 const weatherData = require('./Weather')
 const weatherReport = require('./functions')
 const randomNumbers = require('./data')
+const chalk = require('chalk')
+const axios = require('axios')
+const printName = require('./functions')
 
-console.clear()
-console.log("\n")
+
+// console.clear()
+// console.log("\n")
 
 /**
  * @__0 Variables
@@ -301,7 +305,7 @@ console.log("\n")
 
 // console.log(staff);
 // console.log(cocktail);
-console.clear();
+// console.clear();
 // // console.log(weatherData);
 // const temperature = []
 // const dataSeries = weatherData.dataseries
@@ -359,17 +363,33 @@ console.clear();
 // // Math.min(randomNumbers)
 
 //Number 11 (first practice): to find the second biggest 4-digit number and to find the second smallest 5-digit number
-randomNumbers.sort
-console.log(randomNumbers.sort());
-const fiveDigit= []
-const fourDigit= []
-for (let index = 0; index < randomNumbers.length; index++) {
-  const number = randomNumbers[index];
-  if (number<10000 && number>1000) {
-    fourDigit.push(number)    
-  }
-  else if (number>10000){
-    fiveDigit.push(number)    
-  }
-}
-console.log(`the second biggest 4-digit number is: ${fourDigit[fourDigit.length-1]`);
+// randomNumbers.sort
+// console.log(randomNumbers.sort());
+// const fiveDigit= []
+// const fourDigit= []
+// for (let index = 0; index < randomNumbers.length; index++) {
+//   const number = randomNumbers[index];
+//   if (number<10000 && number>1000) {
+//     fourDigit.push(number)    
+//   }
+//   else if (number>10000){
+//     fiveDigit.push(number)    
+//   }
+// }
+// const fave = fourDigit.length-1
+// console.log(`the second biggest 4-digit number is: ${chalk.blue(fourDigit[fave])}`);
+
+//axios get ---------------------------------------------------------
+// axios.get ('https://jsonplaceholder.typicode.com/users')
+// .then ((res) => {console.log(res.data)
+// res.data.map((user) => {
+//   printName(user)
+// })
+// })
+
+/************************************
+ **** Practice 1 => to reverse a number
+ ************************************/
+const item1= 13209586
+console.log(item1, String(item1));
+console.log(String(item1).split('').reverse().join(''));
