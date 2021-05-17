@@ -1,0 +1,47 @@
+#card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75em;
+    height: 41.5em;
+    width: 20em;
+    /* padding: 0.5em; */
+    margin: 0.5em;
+    background-color: burlywood;
+}
+
+
+span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    color: black;
+    direction:ltr;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+
+#nameContainer {
+    /* padding: 0.5; */
+    display: flex;
+    background-color: cornsilk;
+    justify-content: center;
+}
+
+
+#name {
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+
+#photo {
+    padding: 0.4em;
+    border-radius: 0.75em;
+}
+
+
+#firstItem {
+    margin-top: 1.2em;
+}

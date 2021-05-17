@@ -443,7 +443,7 @@ const users = [
 ]
 
 // Old way
-// users.map(user => console.log(`Name: ${user.name} and City: ${user.address.city}`))
+users.map(user => console.log(`Name: ${user.name} and City: ${user.address.city}`))
 
 // Destructure
 users.map(({ name, address: { city } }) => {

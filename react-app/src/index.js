@@ -4,11 +4,15 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import Sandbox from './Sandbox'
+import Jokepage from './components/JokePage/Jokepage'
+import Parent from './components/Parent/Parent'
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Sandbox />
+    {/* <Sandbox /> */}
+    {/* <Jokepage jokes={['Chuck noris 1', 'Chuck Noris2', 'Nuck Choris 3']}/> */}
+    <Parent/>
   </React.StrictMode>,
   document.getElementById('root')
 )

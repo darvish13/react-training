@@ -1,0 +1,28 @@
+#jokebox {
+    background-color: aliceblue;
+    color: darkgray;
+    border-radius: 1em;
+    flex-direction: column;
+    display: flex;
+    width: 60%;
+    height: 13em;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-bottom: 5em;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
+#whole {
+    width: 100vw;
+    display: flex;
+    color: cornsilk;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: cornflowerblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
