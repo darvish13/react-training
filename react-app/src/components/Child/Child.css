@@ -24,15 +24,16 @@ span {
 #nameContainer {
     /* padding: 0.5; */
     display: flex;
-    background-color: cornsilk;
+    align-items: center;
     justify-content: center;
+    background-color: cornsilk;
+    height: 5em;
 }
 
 
 #name {
-    justify-content: center;
-    align-items: center;
-    text-align: center;    
+    text-align: center;
+    font-size: 1.5em;
 }
 
 

@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals'
 import Sandbox from './Sandbox'
 import Jokepage from './components/JokePage/Jokepage'
 import Parent from './components/Parent/Parent'
+import Grid from './components/Dooz/Dooz'
+import Todo from './components/To-Do/ToDo'
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Sandbox /> */}
     {/* <Jokepage jokes={['Chuck noris 1', 'Chuck Noris2', 'Nuck Choris 3']}/> */}
-    <Parent/>
+    {/* <Parent/> */}
+    {/* <Grid/> */}
+    <Todo/>
   </React.StrictMode>,
   document.getElementById('root')
 )

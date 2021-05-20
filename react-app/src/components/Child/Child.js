@@ -22,16 +22,19 @@ import UserImage from '../../images/MOHAMMAD photo.jpg'
 // export default Child
 
 
+
 /************************************
  **** the second practice
  ************************************/
 const Child =
-    ({ name, username, email, city }) => {
+    ({ name, username, email, city, image }) => {
         return (
             <div id='card'>
-                <img id='photo' src={UserImage} alt="Sydney Opera Hall" />
+                {/* <img id='photo' src={UserImage} alt="Sydney Opera Hall" /> */}
+                <img id='photo' src={image} alt="Sydney Opera Hall" />
+
                 <div id='nameContainer'>
-                    <h1 id='name'>{name}</h1>
+                    <b id='name'>{name}</b>
                 </div>
                 <span id='firstItem'><b>username:</b> {username}</span>
                 <span><b>email:</b> {email}</span>
