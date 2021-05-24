@@ -1,71 +1,134 @@
 import './ToDoEntry.css'
 import { useState } from 'react'
-
-
+import { Check } from '@material-ui/icons'
 
 const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
+  const [IsSelected, setIsSelected] = useState(false)
 
-    const [IsSelected, setIsSelected] = useState(false)
+  return (
+    <div
+      style={{
+        background: 'lightblue',
+        display: 'grid',
+        gridTemplateColumns: '5% 1fr 12.5% 12.5%',
+        gridGap: '0.5em',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '10px',
+        width: '70em',
+        margin: 'auto',
+      }}
+    >
+      <div
+        onClick={() => setIsSelected(!IsSelected)}
+        style={{
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          background: 'lightgray',
+          borderRadius: '10px 0 0 10px',
+          cursor: 'pointer',
+        }}
+      >
+        {IsSelected ? <Check /> : <></>}
+      </div>
 
-    return (
-        <div className='entryWrapper'>
+      <div
+        onClick={() => setIsSelected(!IsSelected)}
+        style={{
+          padding: '1em 1.5em',
+        }}
+      >
+        <p>
+          Esse dolore aliqua tempor occaecat id nostrud quis anim nisi do.
+          Cupidatat proident{' '}
+          <i style={{ backgroundColor: 'orange' }}>officia</i> nulla laborum qui
+          pariatur enim deserunt aute aliqua ad. Nostrud do aliquip adipisicing
+          proident. Velit aliqua aliquip consequat et Lorem. Culpa ut amet do
+          aliquip et irure. Duis Lorem qui labore aute nulla Lorem consectetur
+          ullamco anim fugiat anim. Pariatur sit tempor incididunt consectetur
+          irure occaecat commodo sit consequat nulla laborum.
+        </p>
+      </div>
 
-            <label className="checkBoxContainer">
-                <input
-                    type="checkbox"
-                    checked="checked"
-                    className="checkbox"
-                    checked={IsSelected}
-                    onClick={() => {
-                        setIsSelected(!IsSelected)
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        Edit
+      </div>
 
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        Delete
+      </div>
+    </div>
 
-                        const DuplicateToDo = selectedToDos.find(({ id: toDoId }) => id == toDoId)
-                        console.log('*********:', DuplicateToDo);
+    // <div className='entryWrapper'>
+    //   <label className='checkBoxContainer'>
+    //     <input
+    //       type='checkbox'
+    //       checked='checked'
+    //       className='checkbox'
+    //       checked={IsSelected}
+    //       onClick={() => {
+    //         setIsSelected(!IsSelected)
 
-                        setSelectedToDos([...selectedToDos, { id, text }])
+    //         const DuplicateToDo = selectedToDos.find(
+    //           ({ id: toDoId }) => id == toDoId
+    //         )
+    //         console.log('*********:', DuplicateToDo)
 
-                    }} />
-                <span className="checkmark"></span>
-            </label>
+    //         setSelectedToDos([...selectedToDos, { id, text }])
+    //       }}
+    //     />
+    //     <span className='checkmark'></span>
+    //   </label>
 
-            <div className='toDoEntry'>
-                <p>
-                    {text}
-                </p>
-            </div>
+    //   <div className='toDoEntry'>
+    //     <p>{text}</p>
+    //   </div>
 
-            <div className='buttonsContainer'>
-                <button
-                    type='button'
-                    id='editButton'
-                // onClick={
-                //     (div) => {
-                //         let toBeDeletedItems = setToDelete
-                //         setToDelete(div)
-                //         toBeDeletedItems.push(ToDelete)
-                //     }
-                // }
-                >
-                    edit
-                </button>
-                <button
-                    type='button'
-                    id='deleteButton'
-                // onClick={
-                //     (div) => {
-                //         let toBeDeletedItems = setToDelete
-                //         setToDelete(div)
-                //         toBeDeletedItems.push(ToDelete)
-                //     }
-                // }
-                >
-                    delete
-                </button>
-            </div>
-        </div>
-    )
+    //   <div className='buttonsContainer'>
+    //     <button
+    //       type='button'
+    //       id='editButton'
+    //       // onClick={
+    //       //     (div) => {
+    //       //         let toBeDeletedItems = setToDelete
+    //       //         setToDelete(div)
+    //       //         toBeDeletedItems.push(ToDelete)
+    //       //     }
+    //       // }
+    //     >
+    //       edit
+    //     </button>
+    //     <button
+    //       type='button'
+    //       id='deleteButton'
+    //       // onClick={
+    //       //     (div) => {
+    //       //         let toBeDeletedItems = setToDelete
+    //       //         setToDelete(div)
+    //       //         toBeDeletedItems.push(ToDelete)
+    //       //     }
+    //       // }
+    //     >
+    //       delete
+    //     </button>
+    //   </div>
+    // </div>
+  )
 }
 
 export default ToDoEntry
-
