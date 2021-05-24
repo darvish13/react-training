@@ -1,10 +1,7 @@
 import './ToDo.css'
 import React, { useState } from 'react'
-
-const Row = () => {
-    
-}
-
+import ToDoEntry from '../TodoEntry/ToDoEntry'
+import shortid from 'shortid'
 
 
 const Todo = () => {
@@ -12,7 +9,9 @@ const Todo = () => {
     const [UserInput, setUserInput] = useState()
     const [ToDolist, setToDolist] = useState([])
     const [ToDelete, setToDelete] = useState([])
-    console.log('these are going to be deleted' + { ToDelete });
+    const [SelectedToDos, setSelectedToDos] = useState([])
+    // console.log('these are going to be deleted' + { ToDelete });
+    // console.log(SelectedToDos);
 
     return (
         <>
@@ -35,25 +34,20 @@ const Todo = () => {
                             onChange={(event) => { setUserInput(event.target.value); }}
                             value={UserInput}
                         />
-                        <button type='submit'>Submit your ToDo</button>
+                        <button className='submitButton' type='submit'>Submit</button>
                     </div>
                 </form>
 
-                {ToDolist.map((each) => {
+                {ToDolist.map((each, index) => {
 
                     return (
-                        <div>
-                            <p id='todo'>
-                                {each}
-                            </p>
-                            <button type='button' onClick={(div) => {
-                                let toBeDeletedItems = setToDelete
-                                setToDelete(div)
-                                toBeDeletedItems.push(ToDelete)
-                            }}>
-                                delete
-                            </button>
-                        </div>
+                        <ToDoEntry
+                            key={index}
+                            text={each}
+                            selectedToDos={SelectedToDos}
+                            setSelectedToDos={setSelectedToDos}
+                            id={shortid.generate()}
+                        />
                     )
                 })}
             </div>
