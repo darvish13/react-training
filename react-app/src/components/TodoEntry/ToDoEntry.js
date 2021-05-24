@@ -1,6 +1,6 @@
 import './ToDoEntry.css'
 import { useState } from 'react'
-import { Check } from '@material-ui/icons'
+import { Check, DeleteForever, Edit } from '@material-ui/icons'
 
 const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
   const [IsSelected, setIsSelected] = useState(false)
@@ -16,7 +16,7 @@ const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
         alignItems: 'center',
         borderRadius: '10px',
         width: '70em',
-        margin: 'auto',
+        margin: '0.15em auto',
       }}
     >
       <div
@@ -58,9 +58,12 @@ const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          cursor: 'pointer',
+          width: '100%',
+          height: '100%',
         }}
       >
-        Edit
+        <Edit style={{ color: 'blue', fontSize: '3em' }} />
       </div>
 
       <div
@@ -68,9 +71,12 @@ const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          cursor: 'pointer',
+          width: '100%',
+          height: '100%',
         }}
       >
-        Delete
+        <DeleteForever style={{ color: 'red', fontSize: '3em' }} />
       </div>
     </div>
 

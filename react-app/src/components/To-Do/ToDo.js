@@ -2,7 +2,7 @@ import './ToDo.css'
 import React, { useState } from 'react'
 import ToDoEntry from '../TodoEntry/ToDoEntry'
 import shortid from 'shortid'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { TheRedDiv } from './Todo_styles'
 
 const Todo = () => {
   const [UserInput, setUserInput] = useState()
@@ -56,8 +56,11 @@ const Todo = () => {
           )
         })}
       </div>
+
+      <TheRedDiv isSelected={false} />
     </>
   )
 }
 
 export default Todo
+
