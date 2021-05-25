@@ -1,5 +1,5 @@
 import './ToDo.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ToDoEntry from '../TodoEntry/ToDoEntry'
 import shortid from 'shortid'
 import { TheRedDiv } from './Todo_styles'
@@ -11,6 +11,43 @@ const Todo = () => {
   const [SelectedToDos, setSelectedToDos] = useState([])
   // console.log('these are going to be deleted' + { ToDelete });
   // console.log(SelectedToDos);
+
+  /*******************************************************
+   ******** I wrote it in useEffect to only run it once
+   *******************************************************/
+  useEffect(() => {
+    const answers = [
+      {
+        id: 1,
+        text: 'felan',
+      },
+      {
+        id: 2,
+        text: 'felan_2',
+      },
+      {
+        id: 3,
+        text: 'felan_3',
+      },
+      {
+        id: 4,
+        text: 'felan_4',
+      },
+    ]
+
+    const resultOfMap = answers.map((answer) => {
+      // Do something ...
+      return `This is one of the answers: ${answer.text}`
+    })
+
+    const resultOfFilter = answers.filter(({ id }) => id > 5)
+
+    const resultOfFind = answers.find(({ id }) => id == 13)
+
+    console.log('result of map:', resultOfMap)
+    console.log({ resultOfFilter })
+    console.log(resultOfFind)
+  }, [])
 
   return (
     <>
@@ -63,4 +100,3 @@ const Todo = () => {
 }
 
 export default Todo
-
