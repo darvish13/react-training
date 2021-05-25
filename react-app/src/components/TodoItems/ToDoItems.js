@@ -1,8 +1,9 @@
-import './ToDoEntry.css'
+import './ToDoItems.css'
 import { useState } from 'react'
 import { Check, DeleteForever, Edit } from '@material-ui/icons'
+import styled from 'styled-components' 
 
-const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
+const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos }) => {
   const [IsSelected, setIsSelected] = useState(false)
 
   return (
@@ -80,6 +81,10 @@ const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
       </div>
     </div>
 
+    /************************************
+     **** practice 1
+     ************************************/
+
     // <div className='entryWrapper'>
     //   <label className='checkBoxContainer'>
     //     <input
@@ -137,4 +142,4 @@ const ToDoEntry = ({ text, setSelectedToDos, id, selectedToDos }) => {
   )
 }
 
-export default ToDoEntry
+export default ToDoItems

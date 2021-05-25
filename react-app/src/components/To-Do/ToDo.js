@@ -1,8 +1,9 @@
 import './ToDo.css'
 import React, { useState } from 'react'
-import ToDoEntry from '../TodoEntry/ToDoEntry'
+import ToDoItems from '../TodoItems/ToDoItems'
 import shortid from 'shortid'
-import { TheRedDiv } from './Todo_styles'
+import styled from 'styled-components'
+import { Body, Test } from './Todo_styles'
 
 const Todo = () => {
   const [UserInput, setUserInput] = useState()
@@ -14,7 +15,7 @@ const Todo = () => {
 
   return (
     <>
-      <div id='body'>
+      <Body>
         <b>To Do List</b>
 
         <form
@@ -40,13 +41,13 @@ const Todo = () => {
             />
             <button className='submitButton' type='submit'>
               Submit
-            </button>
+    </button>
           </div>
         </form>
 
         {ToDolist.map((each, index) => {
           return (
-            <ToDoEntry
+            <ToDoItems
               key={index}
               text={each}
               selectedToDos={SelectedToDos}
@@ -55,9 +56,7 @@ const Todo = () => {
             />
           )
         })}
-      </div>
 
-      <TheRedDiv isSelected={false} />
     </>
   )
 }
