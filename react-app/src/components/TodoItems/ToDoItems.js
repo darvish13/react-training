@@ -3,21 +3,54 @@ import { useState } from 'react'
 import { Check, Close, DeleteForever, Edit } from '@material-ui/icons'
 import styled from 'styled-components'
 
-const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos, toDoList, setToDoList }) => {
+const ToDoItems = ({
+  text,
+  setSelectedToDos,
+  id,
+  selectedToDos,
+  toDoList,
+  setToDoList,
+}) => {
+  /**************************************
+   ******** State
+   *************************************/
   const [IsSelected, setIsSelected] = useState(false)
   const [ToDelete, setToDelete] = useState(false)
-  console.log(ToDelete);
 
+  /**************************************
+   ******** Cancel Deletion
+   *************************************/
   const cancel = () => {
     setToDelete(false)
   }
 
+  /**************************************
+   ******** Delete Todo
+   *************************************/
   const deleteToDo = () => {
-    const UpdatedToDolist = toDoList.filter(({ id: selectedId }) => id != selectedId);
+    const UpdatedToDolist = toDoList.filter(
+      ({ id: selectedId }) => id != selectedId
+    )
     setToDoList(UpdatedToDolist)
-
   }
 
+  /**************************************
+   ******** Handle Click
+   *************************************/
+  const handleClick = () => {
+    setIsSelected(!IsSelected)
+
+    const duplicateTodo = selectedToDos.find(({ id: todoId }) => todoId == id)
+
+    if (duplicateTodo)
+      setSelectedToDos(selectedToDos.filter(({ id: todoId }) => todoId != id))
+
+    else setSelectedToDos([...selectedToDos, { id, text }])
+  }
+
+  /**************************************
+   ******** Render
+   *************************************/
   return (
     <div
       style={{
@@ -33,7 +66,7 @@ const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos, toDoList, setToD
       }}
     >
       <div
-        onClick={() => setIsSelected(!IsSelected)}
+        onClick={handleClick}
         style={{
           height: '100%',
           width: '100%',
@@ -49,14 +82,12 @@ const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos, toDoList, setToD
       </div>
 
       <div
-        onClick={() => setIsSelected(!IsSelected)}
+        onClick={handleClick}
         style={{
           padding: '1em 1.5em',
         }}
       >
-        <p>
-          {text}
-        </p>
+        <p>{text}</p>
       </div>
 
       <div
@@ -72,30 +103,20 @@ const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos, toDoList, setToD
         <Edit style={{ color: 'blue', fontSize: '3em' }} />
       </div>
 
-
-
-      {ToDelete
-        ? (<div style={{ display: 'flex' }}>
-          <p>
-            are you sure?
-              </p>
+      {ToDelete ? (
+        <div style={{ display: 'flex' }}>
+          <p>are you sure?</p>
           <Check
             style={{ color: 'green', cursor: 'pointer' }}
-            onClick = {deleteToDo}
+            onClick={deleteToDo}
           />
 
-
-          <Close
-            style={{ color: 'red', cursor: 'pointer' }}
-            onClick={cancel}
-          />
-
-        </div>)
-        : (<div
+          <Close style={{ color: 'red', cursor: 'pointer' }} onClick={cancel} />
+        </div>
+      ) : (
+        <div
           onClick={() => {
             setToDelete(true)
-
-
           }}
           style={{
             display: 'flex',
@@ -108,10 +129,7 @@ const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos, toDoList, setToD
         >
           <DeleteForever style={{ color: 'red', fontSize: '3em' }} />
         </div>
-        )
-      }
-
-
+      )}
     </div>
 
     /************************************

@@ -3,52 +3,13 @@ import React, { useState, useEffect } from 'react'
 import ToDoItems from '../TodoItems/ToDoItems'
 import shortid from 'shortid'
 import styled from 'styled-components'
-import { Body, Test } from './Todo_styles'
+import { Body, DeleteAll, Test } from './Todo_styles'
+import { Delete } from '@material-ui/icons'
 
 const Todo = () => {
   const [UserInput, setUserInput] = useState()
   const [ToDolist, setToDolist] = useState([])
-  const [ToDelete, setToDelete] = useState([])
   const [SelectedToDos, setSelectedToDos] = useState([])
-  // console.log('these are going to be deleted' + { ToDelete });
-  console.log(SelectedToDos);
-
-  /*******************************************************
-   ******** I wrote it in useEffect to only run it once
-   *******************************************************/
-  useEffect(() => {
-    const answers = [
-      {
-        id: 1,
-        text: 'felan',
-      },
-      {
-        id: 2,
-        text: 'felan_2',
-      },
-      {
-        id: 3,
-        text: 'felan_3',
-      },
-      {
-        id: 4,
-        text: 'felan_4',
-      },
-    ]
-
-    const resultOfMap = answers.map((answer) => {
-      // Do something ...
-      return `This is one of the answers: ${answer.text}`
-    })
-
-    const resultOfFilter = answers.filter(({ id }) => id > 5)
-
-    const resultOfFind = answers.find(({ id }) => id == 13)
-
-    console.log('result of map:', resultOfMap)
-    console.log({ resultOfFilter })
-    console.log(resultOfFind)
-  }, [])
 
   return (
     <>
@@ -59,11 +20,14 @@ const Todo = () => {
           id='input'
           onSubmit={(event) => {
             event.preventDefault()
-            let updatedToDolist = ToDolist
-            updatedToDolist.push({id:shortid.generate(), text:UserInput})
-            setToDolist(updatedToDolist)
-            //Now we clear the input field
-            setUserInput('')
+
+            if (UserInput) {
+              let updatedToDolist = ToDolist
+              updatedToDolist.push({ id: shortid.generate(), text: UserInput })
+              setToDolist(updatedToDolist)
+              //Now we clear the input field
+              setUserInput('')
+            }
           }}
         >
           <div>
@@ -82,19 +46,44 @@ const Todo = () => {
           </div>
         </form>
 
-        {ToDolist.map(({text, id}) => {
+        {ToDolist.map(({ text, id }) => {
           return (
             <ToDoItems
               key={id}
               text={text}
-              selectedToDos = {SelectedToDos}
-              setSelectedToDos = {setSelectedToDos}
-              toDoList = {ToDolist}
-              setToDoList = {setToDolist}
+              selectedToDos={SelectedToDos}
+              setSelectedToDos={setSelectedToDos}
+              toDoList={ToDolist}
+              setToDoList={setToDolist}
               id={id}
             />
           )
         })}
+
+        <DeleteAll
+          selectedTodos={SelectedToDos}
+          onClick={() => {
+            /**
+             * find todos that are not in selected todos array
+             */
+            const updatedList = ToDolist.filter((todo) => {
+              const { id } = todo
+
+              const idsToDelete = SelectedToDos.map(({ id }) => id)
+
+              if (!idsToDelete.includes(id)) return todo
+            })
+
+            // update todo list
+            setToDolist(updatedList)
+
+            // clear selected todos
+            setSelectedToDos([])
+          }}
+        >
+          <Delete style={{ color: 'white' }} />
+          <small>Delete All</small>
+        </DeleteAll>
       </Body>
     </>
   )
