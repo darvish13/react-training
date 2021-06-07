@@ -1,10 +1,22 @@
 import './ToDoItems.css'
 import { useState } from 'react'
-import { Check, DeleteForever, Edit } from '@material-ui/icons'
-import styled from 'styled-components' 
+import { Check, Close, DeleteForever, Edit } from '@material-ui/icons'
+import styled from 'styled-components'
 
-const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos }) => {
+const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos, toDoList, setToDoList }) => {
   const [IsSelected, setIsSelected] = useState(false)
+  const [ToDelete, setToDelete] = useState(false)
+  console.log(ToDelete);
+
+  const cancel = () => {
+    setToDelete(false)
+  }
+
+  const deleteToDo = () => {
+    const UpdatedToDolist = toDoList.filter(({ id: selectedId }) => id != selectedId);
+    setToDoList(UpdatedToDolist)
+
+  }
 
   return (
     <div
@@ -43,14 +55,7 @@ const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos }) => {
         }}
       >
         <p>
-          Esse dolore aliqua tempor occaecat id nostrud quis anim nisi do.
-          Cupidatat proident{' '}
-          <i style={{ backgroundColor: 'orange' }}>officia</i> nulla laborum qui
-          pariatur enim deserunt aute aliqua ad. Nostrud do aliquip adipisicing
-          proident. Velit aliqua aliquip consequat et Lorem. Culpa ut amet do
-          aliquip et irure. Duis Lorem qui labore aute nulla Lorem consectetur
-          ullamco anim fugiat anim. Pariatur sit tempor incididunt consectetur
-          irure occaecat commodo sit consequat nulla laborum.
+          {text}
         </p>
       </div>
 
@@ -67,18 +72,46 @@ const ToDoItems = ({ text, setSelectedToDos, id, selectedToDos }) => {
         <Edit style={{ color: 'blue', fontSize: '3em' }} />
       </div>
 
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          cursor: 'pointer',
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <DeleteForever style={{ color: 'red', fontSize: '3em' }} />
-      </div>
+
+
+      {ToDelete
+        ? (<div style={{ display: 'flex' }}>
+          <p>
+            are you sure?
+              </p>
+          <Check
+            style={{ color: 'green', cursor: 'pointer' }}
+            onClick = {deleteToDo}
+          />
+
+
+          <Close
+            style={{ color: 'red', cursor: 'pointer' }}
+            onClick={cancel}
+          />
+
+        </div>)
+        : (<div
+          onClick={() => {
+            setToDelete(true)
+
+
+          }}
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            cursor: 'pointer',
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <DeleteForever style={{ color: 'red', fontSize: '3em' }} />
+        </div>
+        )
+      }
+
+
     </div>
 
     /************************************

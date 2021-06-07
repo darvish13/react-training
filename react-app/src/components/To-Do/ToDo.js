@@ -1,5 +1,5 @@
 import './ToDo.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ToDoItems from '../TodoItems/ToDoItems'
 import shortid from 'shortid'
 import styled from 'styled-components'
@@ -11,7 +11,7 @@ const Todo = () => {
   const [ToDelete, setToDelete] = useState([])
   const [SelectedToDos, setSelectedToDos] = useState([])
   // console.log('these are going to be deleted' + { ToDelete });
-  // console.log(SelectedToDos);
+  console.log(SelectedToDos);
 
   /*******************************************************
    ******** I wrote it in useEffect to only run it once
@@ -60,7 +60,7 @@ const Todo = () => {
           onSubmit={(event) => {
             event.preventDefault()
             let updatedToDolist = ToDolist
-            updatedToDolist.push(UserInput)
+            updatedToDolist.push({id:shortid.generate(), text:UserInput})
             setToDolist(updatedToDolist)
             //Now we clear the input field
             setUserInput('')
@@ -82,14 +82,16 @@ const Todo = () => {
           </div>
         </form>
 
-        {ToDolist.map((each, index) => {
+        {ToDolist.map(({text, id}) => {
           return (
             <ToDoItems
-              key={index}
-              text={each}
-              selectedToDos={SelectedToDos}
-              setSelectedToDos={setSelectedToDos}
-              id={shortid.generate()}
+              key={id}
+              text={text}
+              selectedToDos = {SelectedToDos}
+              setSelectedToDos = {setSelectedToDos}
+              toDoList = {ToDolist}
+              setToDoList = {setToDolist}
+              id={id}
             />
           )
         })}
