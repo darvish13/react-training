@@ -5,6 +5,7 @@ import shortid from 'shortid'
 import styled from 'styled-components'
 import { Body, DeleteAll } from './Todo_styles'
 import { Delete } from '@material-ui/icons'
+import moment from 'moment'
 
 const Todo = () => {
   const [UserInput, setUserInput] = useState()
@@ -18,6 +19,8 @@ const Todo = () => {
 
   //   console.log(JSON.parse(localStorage.getItem('test object')))
   // }, [])
+
+  // console.log(moment().format('dddd of MMMM of YYYY'))
 
   return (
     <>
