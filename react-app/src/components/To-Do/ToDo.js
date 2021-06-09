@@ -3,13 +3,21 @@ import React, { useState, useEffect } from 'react'
 import ToDoItems from '../TodoItems/ToDoItems'
 import shortid from 'shortid'
 import styled from 'styled-components'
-import { Body, DeleteAll, Test } from './Todo_styles'
+import { Body, DeleteAll } from './Todo_styles'
 import { Delete } from '@material-ui/icons'
 
 const Todo = () => {
   const [UserInput, setUserInput] = useState()
-  const [ToDolist, setToDolist] = useState([])
+  const [ToDolist, setToDolist] = useState(
+    JSON.parse(localStorage.getItem('localTodos')) || []
+  )
   const [SelectedToDos, setSelectedToDos] = useState([])
+
+  // useEffect(() => {
+  //   localStorage.setItem('test object', JSON.stringify({ name: 'علیرضا' }))
+
+  //   console.log(JSON.parse(localStorage.getItem('test object')))
+  // }, [])
 
   return (
     <>
